@@ -1,0 +1,80 @@
+/* ^Login ^Register */
+
+.login-form
+	background: #fff
+	color: #666
+	width: 260px
+	padding: 20px
+	margin: 100px auto
+	border-radius: 4px
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4)
+
+.login-form h1
+	border-bottom: 1px solid #ebe6e2
+	fs: 16px
+	fw: 700
+	color: #bdb5aa
+	padding-bottom: 8px
+	margin-bottom: 15px
+	text-shadow: 0 2px 0 rgba(255,255,255,0.8)
+	box-shadow: 0 1px 0 rgba(255,255,255,0.8)
+
+.login-form label
+	block()
+	fs: 16px
+	fw: 800
+	margin-bottom: 8px
+
+.login-form p
+	margin: 10px 0
+
+.login-form p:first-child
+	margin-top: 0
+
+.login-field
+	background: #f9f9f9
+	color: #666
+	font-family: font-stack
+	fs: 13px
+	fw: 400
+	width: 243px
+	padding: 5px
+	margin-bottom: 5px
+	border: 3px solid #ebe6e2
+	border-radius: 5px
+	transition: border-color 0.3s ease-out
+
+.login-field:focus
+	border-color: #bbb
+
+.login-btn
+	inline-block()
+	background: #47a204
+	color: #fff
+	fs: 16px
+	fw: 700
+	border-radius: 3px
+	padding: 10px 30px
+	margin: 5px 0
+	border: none
+	cursor: pointer
+	transition: background 300ms ease-in
+
+.login-btn:hover
+	background: darken(#47a204, 20%)
+
+
+.login-form.ng-invalid .login-btn
+	background: lighten(#47a204, 10%)
+	cursor: default
+	opacity: 0.5
+
+.login-form .register-link
+	fs: 12px
+	margin: 5px
+
+.login-form .error
+	color: #e41c24
+	fs: 12px
+	fw: 400
+	padding-top: 3px

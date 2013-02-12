@@ -1,0 +1,33 @@
+<div class="toolbar clearix">
+	<div class="welcome left">You are logged in, as <b>{{username}}</b>.</div>
+	<div class="filter right">
+		<input type="text" ng-model="query" placeholder="Search your archives or.." class="field left">
+		<a class="right add-list" href="/tracker">Add timer</a>
+	</div>
+</div>
+
+<div class="list">
+	<ul class="clearfix">
+		<li class="list-item" ng-repeat="task in tasks|filter:query">
+			<span class="name">{{task.name}}</span>
+			
+			<span class="info right"> 
+				<span ng-show="task.ellapsed_time">spent {{task.ellapsed_time}}</span>
+				<span ng-hide="task.ellapsed_time" class="reminder"><i class="rec"></i>timer wasn't stop!</span> 
+			</span>
+
+			<a href="/tracker/{{task.id}}" class="resume-task action-btn">
+				<span ng-show="task.ellapsed_time">Resume</span>
+				<span ng-hide="task.ellapsed_time">Track it</span>
+			</a>
+			<div class="delete-task action-btn" ng-click="deleteTask(task.id, $index)">Delete</div>
+		</li>
+	</ul>
+</div>
+
+<div ng-show="!tasks.length > 0" class="not-available">You have no tasks in tracker yet.</div>
+
+<div class="preloader" ng-show="loading">
+	<div class="icon-spinner"></div>
+	<h6>Loading..</h6>
+</div>

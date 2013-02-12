@@ -1,0 +1,119 @@
+/* ^Header */
+
+header
+	gradient-linear(#00d6ff, #00c2ff)
+	border-bottom: 1px solid #00b1f2
+	width: 100%
+	padding: 3px 0 0
+	height: 32px
+
+header .logo
+	block()
+	nodecorate()
+	color: #fff
+	background: url('../images/icon-sprite.png') -98px 3px no-repeat transparent
+	font-family: font-logo
+	fs: 1.6em
+	line-height: 27px
+	padding-left: 27px
+	width: 85px
+	margin: 0 auto
+
+header .logout
+	color: #156d93
+	text-shadow: 0 1px 1px #fff
+	cursor: pointer
+	upcase()
+	nodecorate()
+	fw: 800
+	absolute: top 9px right 17px
+	transition: all 300ms ease-in
+
+header .logout:hover
+	color: #fff
+	text-shadow: 0 1px 1px #156d93
+
+/* ^Toolbar */
+.toolbar
+	background: #fff
+	color: #666
+	width: 100%
+	height: 45px
+	overflow: hidden
+	margin-bottom: 15px
+	box-shadow(0 1px 1px rgba(0,0,0,.2))
+
+.toolbar .welcome
+	margin 15px 20px
+
+.toolbar .add-form
+	margin: 6px 20px 0
+
+.add-form .field
+	background: #f9f9f9
+	border: 1px solid #ddd
+	padding: 5px
+	size: 220px 20px
+	border-radius: 3px
+	font-family: font-stack
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.075), 0 1px 0 rgba(255,255,255,0.5)
+	transition(all 500ms ease-in)
+
+.add-form .field:focus
+	width: 320px
+	border-color: #00c2ff
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.075), 0 0 3px rgba(81,167,232,0.5)
+
+.add-form .add-btn
+	border: 0
+	background: #e41c24
+	color: #fff
+	size: 90px 32px
+	font-family: font-stack
+	border-radius: 3px
+	fw: 800
+	cursor: pointer
+	margin-left: 4px
+	transition(background 300ms ease-in)
+
+.add-form .add-btn:hover
+	background: lighten(#e41c24, 30%)
+
+.add-form.ng-invalid .add-btn
+	cursor: default
+	background: #ff6967
+	opacity: 0.5
+
+.filter
+	margin: 10px 15px
+
+.filter .field
+	border-bottom: 1px solid #333
+	font-family: font-stack
+	padding: 4px 0
+	height: 15px
+	margin: 0 10px 0 0
+
+.filter .view-list,
+.filter .add-list
+	block()
+	color: #fff
+	nodecorate()
+	upcase()
+	padding: 2px 6px
+	margin: 3px 0 0
+	fs: 12px
+	border-radius: 3px
+
+.filter .view-list
+	background: #555
+
+.filter .add-list
+	background: #299a0b
+	margin-right: 5px
+
+.filter .view-list:hover
+	background: darken(#555, 30%)
+
+.filter .add-list:hover
+	background: darken(#299a0b, 30%)

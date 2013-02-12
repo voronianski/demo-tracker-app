@@ -1,0 +1,36 @@
+<div class="toolbar clearix">
+	<div class="welcome left">You are logged in, as <b>{{username}}</b>.</div>
+	<div class="filter right">
+		<a class="right view-list" href="/list">View all</a>
+		<a class="right add-list" href="/tracker">Add timer</a>
+	</div>
+</div>
+
+<div class="task clearfix" ng-repeat="task in tasks">
+	<div class="task-item clearfix">
+		<div class="left">
+			<div countup="task.ellapsed_time" class="task-timer"></div>
+			<div class="title">{{ task.name }}</div>
+			<div class="date">Created {{ task.date }}</div>
+		</div>
+
+		<div class="right">
+			<button class="action-btn" ng-click="stopTimer(task.id, timerValue)" ng-hide="showResume">Stop</button>
+			<button class="action-btn" ng-click="resumeTimer()" ng-show="showResume">Resume</button>
+		</div>
+	</div>
+
+	<div class="task-active-wrap" ng-show="task.active">
+		<h3>Your last unstopped timers:</h3>
+		<ul>
+			<li class="task-active clearfix" ng-repeat="item in task.active">
+				<a href="/tracker/{{item.id}}" class="task-link left">
+					<span class="name">{{item.name}}</span>
+					<span countup="item.ellapsed_time" class="right"></span>
+				</a>
+				<div class="action-btn stop-timer" ng-click="stopTimer(item.id, timerValue)" ng-hide="showResume">Stop</div> 
+				<div class="action-btn resume-timer" ng-click="resumeTimer()" ng-show="showResume">Resume</div>
+			</li>
+		</ul>
+	</div>
+</div>

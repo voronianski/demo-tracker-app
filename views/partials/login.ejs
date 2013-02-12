@@ -1,0 +1,14 @@
+<form name="loginForm" ng-submit="signIn()" class="login-form">
+	<h1>Welcome! Log in here</h1>
+	<p>
+		<label>Login <span ng-show="failedLogin" class="error right">{{ failedLogin }}</span></label>
+		<input type="text" name="" value="" ng-model="form.login" placeholder="Type login here.." class="login-field" required>
+	</p>
+	<p>
+		<label>Password</label>
+		<input type="password" ng-model="form.password" placeholder="Type password here.." class="login-field" required>
+	</p>
+
+	<input type="submit" value="Sign in" class="login-btn" ng-disabled="loginForm.$invalid">
+	<a href="/register" class="register-link right">Not a member yet?</a>
+</form>

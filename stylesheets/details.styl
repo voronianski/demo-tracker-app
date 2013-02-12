@@ -1,0 +1,88 @@
+/* ^Task ^Details */
+
+.task
+	width: 600px
+	margin: 35px auto
+
+.task .task-item
+	width: 540px
+	padding: 30px
+	background: #fff
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2)
+
+.task .task-item .task-timer
+	font-size: 2.8em
+	color: #e41c24
+
+.task .task-item .title
+	fs: 1.8em
+	color: #000
+	margin-top: 5px
+	width: 450px
+	line-height: 24px
+
+.task .task-item .date
+	margin-top: 10px
+	color: #666
+	lowcase()
+
+.task .task-item .action-btn
+	margin: 0
+
+.task-active-wrap
+	margin-top: 25px
+
+.task-active-wrap h3
+	color: #333
+	fs: 1.2em
+	fw: 800
+	padding-bottom: 10px
+
+.task-active-wrap ul
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.2)
+
+.task-active
+	background: #fff
+	border-top: 1px solid #e6e6e6
+	position: relative
+
+.task-active:hover
+	background: #f8f8f8
+
+.task-active .task-link
+	color: #666
+	padding: 15px
+	width: 495px
+	nodecorate()
+	fs: 16px
+
+.task-active .task-link span
+	line-height: 18px
+
+.task-active .task-link .name
+	inline-block()
+	text-overflow(420px)
+
+.task-active .action-btn
+	inline-block()
+	color: #fff
+	fs: 12px
+	upcase()
+	padding: 3px 10px
+	margin: 15px 0 0
+	border-radius: 3px
+	cursor: pointer
+	transition(background 300ms ease-in)
+
+.task-active .stop-timer
+	background: #e41c24
+	margin-left: 7px
+
+.task-active .stop-timer:hover
+	background: lighten(#e41c24, 30%)
+
+.task-active .resume-timer
+	background: #299a0b
+
+.task-active .resume-timer:hover
+	background: darken(#299a0b, 30%)

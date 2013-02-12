@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="timeTracker">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Dmitri Voronianski">
+    <meta name="robots" content="noindex">
+    <title><%= title %></title>
+    <base href="/">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">trakkker</a>
+      <span class="logout" ng-show="auth" ng-click="logout()">Logout</span>
+    </header>
+
+    <div ng-view></div>
+
+    <iframe src="http://labs.voronianski.com/media/frames/pixelhunter_color_24.html" name="pixelhunter_button" allowtransparency="true" scrolling="no" width="24" height="24" style="position: fixed; bottom: 10px; right: 10px; z-index: 100;">Your browser does not support iframe.</iframe>
+
+    <script type="text/javascript" src="/javascripts/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/angular/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <script type="text/javascript" src="/javascripts/controllers.js"></script>
+    <script type="text/javascript" src="/javascripts/services.js"></script>
+    <script type="text/javascript" src="/javascripts/directives.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<div class="toolbar clearix">
+	<form name="addTaskForm" class="add-form left">
+		<input type="text" name="text" class="field" placeholder="Hi, admin! D'ya have a thing to track?" ng-model="taskName" maxlength="80" required>
+		<input type="submit" class="add-btn" ng-click="addTask()" ng-disabled="addTaskForm.$invalid" value="Add">
+	</form>
+
+	<div class="filter right">
+		<input type="text" ng-model="query" placeholder="Search active timers or.." class="field left">
+		<a class="right view-list" href="/list">View all</a>
+	</div>
+</div>
+
+<div class="tracker">
+	<ul class="clearfix">
+		<li ng-repeat="task in tasks|filter:query" class="task-item left">
+			<div class="left">
+				<div countup="task.ellapsed_time" class="task-timer"></div>
+				<div class="title">{{task.name}}</div>
+			</div>
+
+			<div class="right">
+				<button class="action-btn" ng-click="stopTimer(task.id, timerValue)" ng-hide="showResume">Stop</button> 
+				<button class="action-btn" ng-click="resumeTimer()" ng-show="showResume">Resume</button>
+			</div>
+			
+			<i class="delete-task" ng-click="deleteTimer(task.id, timerValue, $index)"></i>
+		</li>
+		<li ng-show="!tasks.length > 0" class="not-available">You don't have any active tasks yet.</li>
+	</ul>
+</div>
+
+<div class="preloader" ng-show="loading">
+	<div class="icon-spinner"></div>
+	<h6>Loading..</h6>
+</div>

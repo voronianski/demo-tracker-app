@@ -1,0 +1,71 @@
+/* ^List */
+.list
+	background: #fff
+	width: 700px
+	margin: 35px auto
+	box-shadow(0 1px 1px rgba(0,0,0,.2))
+
+.list .list-item
+	border-top: 1px solid #e6e6e6
+	position: relative
+	color: #666
+	inline-block()
+	nodecorate()
+	fs: 16px
+	padding: 15px
+	width: 670px
+
+.list .list-item:hover
+	background: #f8f8f8
+
+.list .list-item > span
+	line-height: 18px
+
+.list .list-item .reminder
+	color: #e41c24
+	fw: 700
+
+.list .list-item .rec
+	background: #e41c24
+	inline-block()
+	width: 10px
+	height: 10px
+	margin-right: 5px
+	border-radius: 50%
+	animation: blur .8s infinite
+
+.list .list-item .name
+	inline-block()
+	text-overflow(510px)
+
+.list .list-item .action-btn
+	inline-block()
+	color: #fff
+	cursor: pointer
+	padding: 3px 7px
+	border-radius: 3px
+	upcase()
+	nodecorate()
+	fs: 12px
+	visibility: hidden
+	opacity: 0
+	transition(all 300ms ease-in)
+
+.list .list-item:hover .action-btn
+	visibility: visible
+	opacity: 1
+
+.list .list-item .resume-task
+	background: #299a0b
+	absolute: top 14px left 290px
+
+.list .list-item .delete-task
+	background: #e41c24
+	absolute: top 14px left 360px
+
+.list .list-item .resume-task:hover
+	background: darken(#299a0b, 30%)
+
+.list .list-item .delete-task:hover
+	background: lighten(#e41c24, 30%)
+

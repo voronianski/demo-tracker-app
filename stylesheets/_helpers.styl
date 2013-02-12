@@ -1,0 +1,102 @@
+block()
+	display: block
+
+inline-block()
+	display: inline-block
+
+hide()
+	display: none
+
+nodecorate()
+	text-decoration: none
+
+upcase()
+	text-transform: uppercase
+
+lowcase()
+	text-transform: lowercase
+
+fw(value)
+	font-weight: value
+
+fs(value)
+	font-size: value
+
+italic()
+	font-style: italic
+
+clearfix()
+	block()
+
+	&:after
+		content: "."
+		block()
+		height: 0
+		clear: both
+		visibility: hidden
+
+text-overflow(width)
+	text-overflow: ellipsis
+	white-space: nowrap
+	overflow: hidden
+	width: unit(width, px)
+
+border-radius(radius)
+	-webkit-border-radius: radius
+	-moz-border-radius: radius
+	border-radius: radius
+
+size(numbers...)
+	if length(numbers) > 1
+		width: unit(numbers[0], px)
+		height: unit(numbers[1], px)
+	else
+		width: unit(numbers, px)
+		height: unit(numbers, px)
+
+// ported from Nib
+-pos(type, args)
+	i = 0
+	position: unquote(type)
+	{args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+	{args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+
+-prefix(prop, val)
+	for prefix in vendors
+		if prefix == official
+			{prop}: val
+		else
+			-{prefix}-{prop}: val
+
+absolute()
+	-pos('absolute', arguments)
+
+transition()
+	arguments = unquote('all 300ms ease') unless arguments
+	-prefix(transition, arguments)
+
+box-shadow()
+	-prefix(box-shadow, arguments)
+
+transform()
+	-prefix(transform, arguments)
+
+animation(args...)
+	-prefix(animation, args)
+
+animation-name()
+	-prefix(animation-name, arguments)
+
+animation-duration()
+	-prefix(animation-duration, arguments)
+
+animation-iteration-count()
+	-prefix(animation-iteration-count, arguments)
+
+gradient-linear(topC, bottomC)
+	background: -moz-linear-gradient(top, topC 1%, bottomC 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,topC), color-stop(100%,bottomC));
+	background: -webkit-linear-gradient(top, topC 1%,bottomC 100%);
+	background: -o-linear-gradient(top, topC 1%,bottomC 100%);
+	background: -ms-linear-gradient(top, topC 1%,bottomC 100%);
+	background: linear-gradient(to bottom, topC 1%,bottomC 100%);
