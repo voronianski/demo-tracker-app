@@ -15,11 +15,11 @@ password: xxx
 To run app locally you need to setup your db in **settings.js** file (currently it works with CouchDB):
 
 ```javascript
-couchdb {
+couchdb: {
   name: 'some name',
   url: 'some url',
   port: 'port on which it runs',
   username: 'db user',
   password: 'db pass'
 }
-
+```
