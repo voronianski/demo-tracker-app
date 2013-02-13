@@ -3,9 +3,9 @@ demo-tracker-app
 
 Time tracker app demo is here - http://trakkker-app.jit.su/
 
-It use ``angular.js`` on client side and ``node.js (express)`` as back-end api for ``CouchDB`` data.
+It uses ``angular.js`` on client side and ``node.js (express)`` as back-end api for ``CouchDB`` data.
 
-Currently there is no registration module, so check demo with default user:
+Currently there is no registration module, so check demo with default guest user:
 
 ```bash
 login: guest
