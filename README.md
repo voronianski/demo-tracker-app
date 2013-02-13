@@ -11,3 +11,15 @@ Currently there is no registration module, so check demo with default user:
 login: guest
 password: xxx
 ```
+
+To run app locally you need to setup your db in **settings.js** file (currently it works with CouchDB):
+
+```javascript
+couchdb {
+  name: 'some name',
+  url: 'some url',
+  port: 'port on which it runs',
+  username: 'db user',
+  password: 'db pass'
+}
+
