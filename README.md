@@ -16,8 +16,8 @@ To run app locally you need to setup your db in **settings.js** file (currently 
 
 ```javascript
 couchdb: {
-  name: 'some name',
-  url: 'some url',
+  name: 'some db name',
+  url: 'db url',
   port: 'port on which it runs',
   username: 'db user',
   password: 'db pass'
