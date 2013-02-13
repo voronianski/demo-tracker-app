@@ -38,7 +38,6 @@ exports.signIn = function (req, res) {
  * POST logout
  */
 exports.signOut = function (req, res) {
-	console.log(req.param('cookie'));
 	res.clearCookie(req.param('cookie'));
 	res.send(200);
 }
